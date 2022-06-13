@@ -1,0 +1,18 @@
+diff -uNr qemu-6.1.0/meson.build qemu-6.1.0.mod/meson.build
+--- qemu-6.1.0/meson.build	2021-08-25 18:10:11.326652683 +0300
++++ qemu-6.1.0.mod/meson.build	2021-08-25 18:11:06.867091838 +0300
+@@ -1201,12 +1201,9 @@
+ # config-host.h #
+ #################
+ 
+-have_virtfs = (targetos == 'linux' and
+-    have_system and
+-    libattr.found() and
+-    libcap_ng.found())
++have_virtfs = true
+ 
+-have_virtfs_proxy_helper = have_virtfs and have_tools
++have_virtfs_proxy_helper = false
+ 
+ if get_option('virtfs').enabled()
+   if not have_virtfs

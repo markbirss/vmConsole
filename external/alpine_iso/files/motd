@@ -1,0 +1,75 @@
+[0;36m----------------------------------------------------------------[0m
+
+[1;96m= APPLICATION USAGE HOW-TO =[0m
+
+[1;96mTerminal gestures:[0m
+
+ [0;36m- Pinch-zooming: resize console text.[0m
+ [0;36m- Short tap: left mouse button click in compatible programs.[0m
+ [0;36m- Long tap: open context menu.[0m
+
+[1;36mWhy console text can get messed up[0;36m: due to serial console
+nature, text resize actually does not change size of terminal
+and interface could get messed up. Use command [0;32mresize [0;36mafter
+changing text size.[0m
+
+[1;36mPreventing host sleep mode[0;36m: if you need to run the virtual
+machine while device screen is off, a wake lock should be
+enabled. You can toggle it through the notification. Disabled
+wake lock can lead to system clock appearing to be out-of-sync
+or pausing of the whole VM.[0m
+
+[1;36mKey shortcuts[0;36m: application supports combinations of keys from
+touch keyboard and Volume-Up/Volume-Down buttons. Volume-Down
+emulates the Ctrl key and Volume-Up can be used to produce
+special input:[0m
+
+ [1;36m+====================+================================+[0m
+ [1;36m|[1;32m Key combination    [1;36m|[1;32m Produced input                 [1;36m|[0m
+ [1;36m+====================+================================+[0m
+ [1;36m| [0;32mVolume-Up .        [1;36m| [0;32mCtrl \                         [1;36m|[0m
+ [1;36m| [0;32mVolume-Up <1..9>   [1;36m| [0;32mF1, F2, ..., F9 keys           [1;36m|[0m
+ [1;36m| [0;32mVolume-Up 0        [1;36m| [0;32mF10                            [1;36m|[0m
+ [1;36m| [0;32mVolume-Up A        [1;36m| [0;32mLeft arrow key                 [1;36m|[0m
+ [1;36m| [0;32mVolume-Up B        [1;36m| [0;32mAlt B                          [1;36m|[0m
+ [1;36m| [0;32mVolume-Up D        [1;36m| [0;32mRight arrow key                [1;36m|[0m
+ [1;36m| [0;32mVolume-Up E        [1;36m| [0;32mEscape                         [1;36m|[0m
+ [1;36m| [0;32mVolume-Up F        [1;36m| [0;32mAlt F                          [1;36m|[0m
+ [1;36m| [0;32mVolume-Up H        [1;36m| [1;32m~ [0;32mthe tilde character          [1;36m|[0m
+ [1;36m| [0;32mVolume-Up K        [1;36m| [0;32mToggle extra keys row          [1;36m|[0m
+ [1;36m| [0;32mVolume-Up L        [1;36m| [1;32m| [0;32mthe pipe character           [1;36m|[0m
+ [1;36m| [0;32mVolume-Up N        [1;36m| [0;32mPage down key                  [1;36m|[0m
+ [1;36m| [0;32mVolume-Up P        [1;36m| [0;32mPage up key                    [1;36m|[0m
+ [1;36m| [0;32mVolume-Up S        [1;36m| [0;32mDown arrow key                 [1;36m|[0m
+ [1;36m| [0;32mVolume-Up T        [1;36m| [0;32mTab key                        [1;36m|[0m
+ [1;36m| [0;32mVolume-Up U        [1;36m| [1;32m_ [0;32mthe underscore character     [1;36m|[0m
+ [1;36m| [0;32mVolume-Up V        [1;36m| [0;32mShow the volume control        [1;36m|[0m
+ [1;36m| [0;32mVolume-Up W        [1;36m| [0;32mUp arrow key                   [1;36m|[0m
+ [1;36m| [0;32mVolume-Up X        [1;36m| [0;32mAlt X                          [1;36m|[0m
+ [1;36m|____________________|________________________________|[0m
+
+[0;36mNote that Volume-Up does not represent the Alt key even though
+it is being used to emulate certain its combinations.[0m
+
+[0;36mThese key combinations can be used on a hardware keyboard to
+trigger certain actions of the application:[0m
+
+ [1;36m+=================+===============================+[0m
+ [1;36m|[1;32m Key combination [1;36m|[1;32m Action                        [1;36m|[0m
+ [1;36m+=================+===============================+[0m
+ [1;36m| [0;32mCtrl Alt +      [1;36m| [0;32mIncrease text size            [1;36m|[0m
+ [1;36m| [0;32mCtrl Alt -      [1;36m| [0;32mReduce text size              [1;36m|[0m
+ [1;36m| [0;32mCtrl Alt K      [1;36m| [0;32mToggle the touch keyboard     [1;36m|[0m
+ [1;36m| [0;32mCtrl Alt M      [1;36m| [0;32mOpen context menu             [1;36m|[0m
+ [1;36m| [0;32mCtrl Alt U      [1;36m| [0;32mOpen URL selector             [1;36m|[0m
+ [1;36m| [0;32mCtrl Alt V      [1;36m| [0;32mPaste clipboard               [1;36m|[0m
+ [1;36m|_________________|_______________________________|[0m
+
+[1;36mPort forwarding[0;36m: VM is configured to forward ports of SSH (22)
+and Web (80) services. Both ports are exposed as random ones
+on the host and are world-accessible within your local network.
+You can view the host ports through the context menu. They are
+shown on related tabs "Open SSH" and "Open Web" which used to
+launch clients for respective services.[0m
+
+[0;36m----------------------------------------------------------------[0m

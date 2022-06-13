@@ -1,0 +1,28 @@
+# Generated.
+/app/.cxx
+/app/build
+/app/debug
+/.gradle
+*.apk
+*.iso
+*.so
+
+# Local configuration.
+/.idea
+*.iml
+local.properties
+
+# Project doesn't support building on Windows.
+/gradlew.bat
+
+# OS-specific files.
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Don't ignore prebuilt libraries.
+!/external/libvmc/jniLibs/*/*.so

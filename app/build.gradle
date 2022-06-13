@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 32
+
+    dependencies {
+        implementation "androidx.annotation:annotation:1.3.0"
+        implementation "androidx.preference:preference:1.2.0"
+    }
+
+    defaultConfig {
+        applicationId "sylirre.vmconsole"
+        minSdkVersion 24
+        targetSdkVersion 32
+        versionCode 1
+        versionName "1.0"
+
+        archivesBaseName = "vmConsole-$versionName"
+
+        splits {
+            abi {
+                enable false
+                reset()
+                include 'arm64-v8a', 'x86_64', 'armeabi-v7a', 'x86'
+                universalApk true
+            }
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('vmconsole.jks')
+            keyAlias 'vmconsole'
+            storePassword System.getenv("KEY_PASSPHRASE")
+            keyPassword System.getenv("KEY_PASSPHRASE")
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        jniLibs.useLegacyPackaging = true
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+tasks.withType(Test) {
+    testLogging {
+        events "started", "passed", "skipped", "failed"
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+}

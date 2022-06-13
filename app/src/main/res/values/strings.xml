@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="application_name">vmConsole</string>
+
+    <!-- Common -->
+    <string name="cancel_label">Cancel</string>
+    <string name="exit_label">Exit</string>
+    <string name="ok_label">OK</string>
+
+    <!-- Installer dialog -->
+    <string name="installer_progress_message">Initializing…</string>
+    <string name="installer_error_title">Initialization failed</string>
+    <string name="installer_error_body">Application was unable to set up runtime resources.</string>
+    <string name="installer_error_try_again_button">Try again</string>
+
+    <!-- Context menu: main -->
+    <string name="menu_copy_text">Copy</string>
+    <string name="menu_paste_text">Paste</string>
+    <string name="menu_more">More…</string>
+
+    <!-- Context menu: more -->
+    <string name="menu_open_ssh">Open SSH (%s)</string>
+    <string name="menu_open_web">Open Web (%s)</string>
+    <string name="menu_autofill_pw">Autofill password</string>
+    <string name="menu_select_urls">Select URLs</string>
+    <string name="menu_reset_terminal">Reset</string>
+    <string name="menu_shutdown">Shut down</string>
+    <string name="menu_toggle_ignore_bell">Ignore bell character</string>
+
+    <!-- Context menu: Open SSH -->
+    <string name="dialog_set_ssh_user_title">Connect as user:</string>
+    <string name="dialog_set_ssh_user_invalid_name">Cannot use the given SSH user name.</string>
+    <string name="toast_open_ssh_intent_failure">Unable to launch SSH client Android application.</string>
+    <string name="toast_open_ssh_unavailable">Cannot use this function because port forwarding failed.</string>
+
+    <!-- Context menu: Open Web -->
+    <string name="toast_open_web_intent_failure">Unable to launch web browser Android application.</string>
+    <string name="toast_open_web_unavailable">Cannot use this function because port forwarding failed.</string>
+
+    <!-- Select URL dialog -->
+    <string name="toast_no_urls_found">No URLs detected.</string>
+    <string name="toast_url_copied">URL has been copied to clipboard.</string>
+    <string name="toast_bad_url">Cannot open this URL!</string>
+    <string name="select_url_dialog_title">Click URL to copy or long press to open:</string>
+
+    <!-- Shut down dialog -->
+    <string name="dialog_shut_down_title">Shut down VM</string>
+    <string name="dialog_shut_down_desc">All unsaved data will be lost, do you want to continue?</string>
+    <string name="dialog_shut_down_yes_btn">Yes</string>
+
+    <!-- Notification -->
+    <string name="notification_action_wake_lock">Acquire wakelock</string>
+    <string name="notification_action_wake_unlock">Release wakelock</string>
+    <string name="notification_action_shutdown">Shut down</string>
+
+    <!-- Misc -->
+    <string name="toast_boot_notification">Starting up VM usually takes few minutes…</string>
+    <string name="toast_no_storage_permission">Could not proceed without storage access permission!</string>
+    <string name="toast_reset_terminal">Terminal state has been reset.</string>
+</resources>
