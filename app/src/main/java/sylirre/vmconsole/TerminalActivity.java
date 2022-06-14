@@ -464,7 +464,7 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
 
         // Get a free high port for Web forwarding.
         // This port will be exposed to external network. User should take care about security.
-        int webPort = -1;
+        int webPort;
         // Case where webPort will be equal to sshPort is unlikely, but
         // try eliminate this possibility as well.
         for (int attempt=0; attempt<3; attempt++) {
@@ -473,8 +473,6 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
                 mTermService.WEB_PORT = webPort;
                 vmnicArgs = vmnicArgs + ",hostfwd=tcp::" + webPort + "-:80";
                 break;
-            } else {
-                webPort = -1;
             }
         }
 
@@ -508,10 +506,8 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
         Log.i(Config.APP_LOG_TAG, "initiating QEMU session with following arguments: "
             + processArgs.toString());
 
-        TerminalSession session = new TerminalSession(processArgs.toArray(new String[0]),
+        return new TerminalSession(processArgs.toArray(new String[0]),
             environment.toArray(new String[0]), Config.getDataDirectory(appContext), mTermService);
-
-        return session;
     }
 
     /**
