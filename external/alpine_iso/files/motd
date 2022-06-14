@@ -72,4 +72,14 @@ You can view the host ports through the context menu. They are
 shown on related tabs "Open SSH" and "Open Web" which used to
 launch clients for respective services.[0m
 
+[1;36mExternal storage[0;36m: available only if storage permission is
+granted to the application and can be mounted with the next
+command:
+
+  [0;32mmount -t 9p host_storage /mnt[0m
+
+[0;36mDepending on the build variant of application and Android OS
+version, access to files could be limited. For example you
+may be able to access only media files (e.g. jpg).[0m
+
 [0;36m----------------------------------------------------------------[0m
