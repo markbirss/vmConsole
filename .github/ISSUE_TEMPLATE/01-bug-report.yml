@@ -1,0 +1,42 @@
+name: "Bug report"
+description: "Report an issue if you have found that application is malfunctioning."
+title: "[Bug]: "
+labels: ["bug report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a form you required to fill in order to submit a bug report of vmConsole. Use it to submit issues only of application itself.
+
+        Alpine Linux is not affiliated with vmConsole. Package bugs are not subject to be reported there.
+  - type: textarea
+    attributes:
+      label: Problem description
+      description: |
+        Provide a clear description of the problem. Please attach screenshots, video recording or other information which may help us to understand the problem.
+
+        Issues without proper description will be instantly closed.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce the behavior.
+      description: |
+        Describe steps which will let us to reproduce the issue.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What is the expected behavior?
+      description:
+        Describe the result you have expected when performing above steps. That will help us to determine whether bug really exists or that was just application usage misunderstanding.
+  - type: textarea
+    attributes:
+      label: System information
+      description: Please provide info about your device
+      value: |
+        * Application version:
+        * Android OS version:
+        * Device model:
+    validations:
+      required: true
