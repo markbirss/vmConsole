@@ -36,6 +36,8 @@ understanding the concept of emulators and virtual machines, what is a
 "serial console", etc. Author will not be your mentor and no, author will
 not teach you hacking.**
 
+<p align="center"><img src="images/screenshots.gif" width="60%"></p>
+
 ## About project
 
 Let's begin from why vmConsole has been created. This project has been created
