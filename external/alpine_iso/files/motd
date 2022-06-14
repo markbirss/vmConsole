@@ -82,4 +82,11 @@ command:
 version, access to files could be limited. For example you
 may be able to access only media files (e.g. jpg).[0m
 
+[1;96m= GETTING HELP FOR ALPINE LINUX =[0m
+
+[1;36mAlpine Wiki[0;36m: [0;35mhttps://wiki.alpinelinux.org/wiki/Main_Page[0m
+
+[0;36mThe Wiki pages contain lots of information on how to get
+started with Alpine Linux distribution.[0m
+
 [0;36m----------------------------------------------------------------[0m
