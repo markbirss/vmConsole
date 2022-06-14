@@ -2,7 +2,9 @@
 /app/.cxx
 /app/build
 /app/debug
+/app/release
 /.gradle
+*.aab
 *.apk
 *.iso
 *.so
