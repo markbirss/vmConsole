@@ -2,7 +2,7 @@
 
 [1;96m= APPLICATION USAGE HOW-TO =[0m
 
-[1;96mTerminal gestures:[0m
+[1;36mTerminal gestures:[0m
 
  [0;36m- Pinch-zooming: resize console text.[0m
  [0;36m- Short tap: left mouse button click in compatible programs.[0m
@@ -71,5 +71,22 @@ on the host and are world-accessible within your local network.
 You can view the host ports through the context menu. They are
 shown on related tabs "Open SSH" and "Open Web" which used to
 launch clients for respective services.[0m
+
+[1;36mExternal storage[0;36m: available only if storage permission is
+granted to the application and can be mounted with the next
+command:
+
+  [0;32mmount -t 9p host_storage /mnt[0m
+
+[0;36mDepending on the build variant of application and Android OS
+version, access to files could be limited. For example you
+may be able to access only media files (e.g. jpg).[0m
+
+[1;96m= GETTING HELP FOR ALPINE LINUX =[0m
+
+[1;36mAlpine Wiki[0;36m: [0;35mhttps://wiki.alpinelinux.org/wiki/Main_Page[0m
+
+[0;36mThe Wiki pages contain lots of information on how to get
+started with Alpine Linux distribution.[0m
 
 [0;36m----------------------------------------------------------------[0m
