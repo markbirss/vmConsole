@@ -115,7 +115,7 @@ fi
 # Notify user when rootfs is placed on tmpfs which is default configuration.
 if [[ $(grep "[[:space:]]/[[:space:]]" /proc/mounts | cut -d' ' -f3) == "tmpfs" ]]; then
 	if [ "$SHLVL" = "1" ]; then
-		printf '\n\e[1;93mNote: \e[0;33mrootfs is mounted as tmpfs. Changes will not persist over reboots.\e[0m\n\n'
+		printf '\n\e[1;93mNOTE: \e[0;33mrootfs is mounted as tmpfs. Changes will not persist over reboots.\n\nThis is intended behavior for standard installation, do not worry.\n\nYou can reinstall system on disk or remove this notice from ~/.bashrc.\e[0m\n\n'
 	fi
 fi
 
