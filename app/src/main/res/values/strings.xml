@@ -55,6 +55,6 @@
 
     <!-- Misc -->
     <string name="toast_boot_notification">Starting up VM usually takes few minutes…</string>
-    <string name="toast_no_storage_permission">Could not proceed without storage access permission!</string>
+    <string name="toast_no_storage_permission">No storage permission granted: you will not be able to mount external storage!</string>
     <string name="toast_reset_terminal">Terminal state has been reset.</string>
 </resources>

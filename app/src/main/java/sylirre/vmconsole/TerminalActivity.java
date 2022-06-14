@@ -130,31 +130,6 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
      * Check for storage permission and start service.
      */
     private void startApplication() {
-        boolean hasStoragePermission = false;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            // On Android 11 we need to deal with MANAGE_EXTERNAL_STORAGE permission to overcome
-            // the scoped storage restrictions.
-            // Ref: https://developer.android.com/about/versions/11/privacy/storage#all-files-access
-            // Ref: https://developer.android.com/training/data-storage/manage-all-files
-            if (Environment.isExternalStorageManager()) {
-                hasStoragePermission = true;
-            }
-        } else {
-            // Otherwise use a regular permission WRITE_EXTERNAL_STORAGE.
-            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                == PackageManager.PERMISSION_GRANTED) {
-                hasStoragePermission = true;
-            }
-        }
-
-        // Ensure that application can manage storage.
-        if (!hasStoragePermission) {
-            startActivity(new Intent(this, StoragePermissionActivity.class)
-                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-            finish();
-            return;
-        }
-
         // Start the service and make it run regardless of who is bound to it:
         Intent serviceIntent = new Intent(this, TerminalService.class);
         startService(serviceIntent);
@@ -315,6 +290,25 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
     }
 
     /**
+     * Determine whether application has at least read-only permission to
+     * the shared storage.
+     * @return Boolean value whether storage permission is granted.
+     */
+    private boolean hasStoragePermission() {
+        if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                == PackageManager.PERMISSION_GRANTED) {
+            return true;
+        }
+
+        if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                == PackageManager.PERMISSION_GRANTED) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
      * Get a random free high tcp port which later will be used in startQemu().
      * @return Integer value in range 30000 - 50000 which is available tcp port.
      *         On failure -1 will be returned.
@@ -338,7 +332,7 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
 
     /**
      * Determine a safe amount of memory which could be allocated by QEMU.
-     * @returns Array containing 2 integers, [tcg, vm_ram];
+     * @return Array containing 2 integers, [tcg, vm_ram];
      */
     private int[] getSafeMem() {
         Context appContext = this;
@@ -489,10 +483,16 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
 
         // Access to shared storage.
         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
-            processArgs.addAll(Arrays.asList("-fsdev",
-                "local,security_model=none,id=fsdev0,multidevs=remap,path=/storage/self/primary"));
-            processArgs.addAll(Arrays.asList("-device",
-                "virtio-9p-pci,fsdev=fsdev0,mount_tag=host_storage,id=virtio-9p-pci0"));
+            if (hasStoragePermission()) {
+                // FIXME: heuristically determine the mount point of external storage instead
+                // of hardcoding /storage/self/primary.
+                processArgs.addAll(Arrays.asList("-fsdev",
+                        "local,security_model=none,id=fsdev0,multidevs=remap,path=/storage/self/primary"));
+                processArgs.addAll(Arrays.asList("-device",
+                        "virtio-9p-pci,fsdev=fsdev0,mount_tag=host_storage,id=virtio-9p-pci0"));
+            } else {
+                Toast.makeText(this, R.string.toast_no_storage_permission, Toast.LENGTH_LONG).show();
+            }
         }
 
         // We need only monitor & serial consoles.
@@ -510,9 +510,6 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
 
         TerminalSession session = new TerminalSession(processArgs.toArray(new String[0]),
             environment.toArray(new String[0]), Config.getDataDirectory(appContext), mTermService);
-
-        // Notify user that booting can take a while.
-        Toast.makeText(this, R.string.toast_boot_notification, Toast.LENGTH_LONG).show();
 
         return session;
     }
