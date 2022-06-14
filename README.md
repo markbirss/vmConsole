@@ -54,7 +54,7 @@ vmConsole could be seen as a composition of terminal emulator library and few
 UI elements from [Termux] and standalone [QEMU] package, which resulted in
 a completely different application.
 
-This project is not a community driven. As stated before, it has been created
+This project is not community driven. As stated before, it has been created
 for the personal needs of [author] and will continue to be developed according
 to his point of view. The application is not guaranteed to be useful for you
 or implement features that you request.
