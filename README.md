@@ -164,7 +164,12 @@ to emulator implementation differences.
 #### Is KVM support planned?
 
 Currently not, I generally against implementing any feature that would
-require customizing firmware of device or at least rooting.
+require customizing firmware of device or at least rooting. In general, the
+virtualization is not possible on the most of modern Android devices because
+HYP mode (EL2) is already acquired and locked by ARM TrustZone. Modifying
+bootloader to disable the latter may cause issues with fingerprint sensor,
+HW keystore or even render device unbootable. That's for ARM 32/64 bit
+devices. Not sure about the situation with x86 ones.
 
 If Android will officially provide `/dev/kvm` accessible by regular apps,
 then I will look into implementing KVM support. But remember that it would
