@@ -13,12 +13,6 @@ functionality, exploring hidden [Android OS] paths with root, etc. Neither
 usable as a rooting tool. Root permissions are same virtual as hardware
 on which the [Alpine Linux] is running.
 
-Optimal device properties for running this app:
-
-* 64-bit CPU
-* 8+ GB of RAM
-* 8+ GB of disk space (if planning on-disk Alpine installation)
-
 Typical use-cases of vmConsole application:
 
 * Exploring the world of Linux =)
@@ -37,6 +31,18 @@ understanding the concept of emulators and virtual machines, what is a
 not teach you hacking.**
 
 <p align="center"><img src="images/screenshots.gif" width="60%"></p>
+
+## Installation
+
+Application is available on Google Play Store.
+
+Optimal device properties for running this app:
+
+* 64-bit CPU
+* 8+ GB of RAM
+* 8+ GB of disk space (if planning on-disk Alpine installation)
+
+[<img src="images/google-play-badge.png" width="256px">](https://play.google.com/store/apps/details?id=sylirre.vmconsole)
 
 ## About project
 
