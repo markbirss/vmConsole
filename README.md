@@ -46,6 +46,23 @@ Optimal device properties for running this app:
 
 [<img src="images/google-play-badge.png" width="256px">](https://play.google.com/store/apps/details?id=sylirre.vmconsole)
 
+## VM properties
+
+|VM property          |Details                                  |
+|:--------------------|:----------------------------------------|
+|OS                   |Alpine Linux, edge branch, diskless mode |
+|Accelerator          |QEMU TCG                                 |
+|CPU architecture     |x86_64                                   |
+|CPU type             |max                                      |
+|RAM size             |host-specific, 2047 MiB max              |
+|Disk I size          |R/W, dynamic, up to 32 GiB, `/dev/sda`   |
+|Disk II size         |R/W, dynamic, up to 32 GiB, `/dev/sdb`   |
+|Network type         |User mode, emulated by SLiRP             |
+|Graphical adapter    |disabled                                 |
+|Parallel port        |disabled                                 |
+|QEMU monitor         |disabled                                 |
+|Android host storage |9P, mount tag `host_storage`             |
+
 ## About project
 
 Let's begin from why vmConsole has been created. This project has been created
