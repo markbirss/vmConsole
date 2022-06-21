@@ -48,6 +48,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.net.ServerSocket;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -482,10 +483,9 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
         // Access to shared storage.
         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
             if (hasStoragePermission()) {
-                // FIXME: heuristically determine the mount point of external storage instead
-                // of hardcoding /storage/self/primary.
+                File sharedStorage = Environment.getExternalStorageDirectory();
                 processArgs.addAll(Arrays.asList("-fsdev",
-                        "local,security_model=none,id=fsdev0,multidevs=remap,path=/storage/self/primary"));
+                        "local,security_model=none,id=fsdev0,multidevs=remap,path=" + sharedStorage.getAbsolutePath()));
                 processArgs.addAll(Arrays.asList("-device",
                         "virtio-9p-pci,fsdev=fsdev0,mount_tag=host_storage,id=virtio-9p-pci0"));
             } else {
