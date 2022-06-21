@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<header class="home-header">
+  <h1 class="home-title">{{ page.title | escape }}</h1>
+  <style>
+    .first { font-weight: bold; }
+    .wiki { text-align: center; }
+
+    img { margin: 18px auto; max-width:100%; height:auto; }
+    img.phone:first-of-type { margin-top: 3em; display: block; }
+    @media only screen and (min-width: 500px) {
+      img.phone:first-of-type { margin-top: 0; margin-bottom: 0; margin-left: 1em; margin-right: 1em; float: right; }
+    }
+    .badges { text-align: center; margin-top: 0; margin-left: auto; margin-right: auto; }
+
+    .fade-out { opacity: 0; transition: opacity 1s; }
+    .fade-in { opacity: 1; transition: opacity 1s; }
+  </style>
+</header>
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  <p>vmConsole is a free and open-source application that enables you to run
+     <a href="https://alpinelinux.org">Alpine Linux</a> distribution in a
+     virtual machine on your Android device. Thousands of packages available
+     for installation from online repositories make vmConsole a powerful tool
+     for software developers, testers, system administrators and just Linux
+     fans. The core of application is <a href="https://qemu.org">QEMU</a>
+     x86_64 emulator, so you do not need superuser permissions, KVM support
+     or other special features of device. Input and output are being performed
+     through Xterm-compatible terminal screen.</p>
+
+  <div class="badges">
+    <a href="https://play.google.com/store/apps/details?id=sylirre.vmconsole">
+      <img alt="Get it on Google Play" src="files/get-it-on-google-play.png" width="215" height="83"/></a>
+  </div>
+</div>
+<script src="files/slider.js"></script>
