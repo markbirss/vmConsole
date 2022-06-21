@@ -175,7 +175,7 @@ public final class ExtraKeysView extends GridLayout {
                 button.setPadding(0, 0, 0, 0);
 
                 if ("↑←↓→".contains(buttonText)) {
-                    button.setTypeface(button.getTypeface(), Typeface.BOLD);
+                    button.setTextSize(17);
                 }
 
                 final Button finalButton = button;
