@@ -48,6 +48,11 @@ public abstract class TerminalTestCase extends TestCase {
 		}
 
 		@Override
+		public void titleChanged(String oldTitle, String newTitle) {
+			titleChanges.add(new ChangedTitle(oldTitle, newTitle));
+		}
+
+		@Override
 		public void clipboardText(String text) {
 			clipboardPuts.add(text);
 		}

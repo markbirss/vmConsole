@@ -2384,6 +2384,9 @@ public final class TerminalEmulator {
     private void setTitle(String newTitle) {
         String oldTitle = mTitle;
         mTitle = newTitle;
+        if (!Objects.equals(oldTitle, newTitle)) {
+            mSession.titleChanged(oldTitle, newTitle);
+        }
     }
 
     /** If DECSET 2004 is set, prefix paste with "\033[200~" and suffix with "\033[201~". */

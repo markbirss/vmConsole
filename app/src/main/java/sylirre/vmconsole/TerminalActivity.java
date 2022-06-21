@@ -219,6 +219,11 @@ public final class TerminalActivity extends Activity implements ServiceConnectio
             }
 
             @Override
+            public void onTitleChanged(TerminalSession updatedSession) {
+                return;
+            }
+
+            @Override
             public void onSessionFinished(final TerminalSession finishedSession) {
                 // Needed for resetting font size on next application launch
                 // otherwise it will be reset only after force-closing.

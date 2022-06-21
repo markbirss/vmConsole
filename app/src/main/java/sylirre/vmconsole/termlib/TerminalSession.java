@@ -50,6 +50,8 @@ public final class TerminalSession extends TerminalOutput {
     public interface SessionChangedCallback {
         void onTextChanged(TerminalSession changedSession);
 
+        void onTitleChanged(TerminalSession changedSession);
+
         void onSessionFinished(TerminalSession finishedSession);
 
         void onClipboardText(TerminalSession session, String text);
@@ -310,6 +312,11 @@ public final class TerminalSession extends TerminalOutput {
         mTerminalToProcessIOQueue.close();
         mProcessToTerminalIOQueue.close();
         JNI.close(mTerminalFileDescriptor);
+    }
+
+    @Override
+    public void titleChanged(String oldTitle, String newTitle) {
+        mChangeCallback.onTitleChanged(this);
     }
 
     public synchronized boolean isRunning() {
