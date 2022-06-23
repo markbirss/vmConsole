@@ -27,19 +27,39 @@ layout: default
 
   {{ content }}
 
-  <p>vmConsole is a free and open-source application that enables you to run
-     <a href="https://alpinelinux.org">Alpine Linux</a> distribution in a
-     virtual machine on your Android device. Thousands of packages available
-     for installation from online repositories make vmConsole a powerful tool
-     for software developers, testers, system administrators and just Linux
-     fans. The core of application is <a href="https://qemu.org">QEMU</a>
-     x86_64 emulator, so you do not need superuser permissions, KVM support
-     or other special features of device. Input and output are being performed
-     through Xterm-compatible terminal screen.</p>
+  <img class="phone" src="files/demo_boot-logs.png" data-sliderimages="files/demo_dns-dig.png,files/demo_nvim.png,files/demo_metasploit.png,files/demo_btop.png,files/demo_docker.png" alt="" width="305" height="600"/>
+
+  <p>
+    vmConsole is a Linux virtual machine application for Android OS. It is
+    built on top of <a href="https://qemu.org">QEMU</a> system emulator and
+    runs <a href="https://alpinelinux.org">Alpine Linux</a> — a small, yet
+    powerful Linux distribution. This application lets you to do everything,
+    like from playing with Bash scripts to performing a penetration test
+    of remote server.
+  </p>
 
   <div class="badges">
     <a href="https://play.google.com/store/apps/details?id=sylirre.vmconsole">
-      <img alt="Get it on Google Play" src="files/get-it-on-google-play.png" width="215" height="83"/></a>
+      <img alt="Get it on Google Play" src="files/get-it-on-google-play.png" width="215" height="83"/>
+    </a>
   </div>
+
+  <p><strong class="first">Powerful.</strong>
+  Alpine Linux distribution has over 10000 packages in its repositories
+  covering the majority of typical tasks. Text editors, compilers, network
+  administration utilities and others are all there.
+
+  <p><strong class="first">Secure.</strong>
+  What happens inside VM is remaining to be inside VM. You can't mess up
+  or brick your device by running something inside vmConsole. Note that
+  you're given full root control over virtual machine without the need
+  of rooting or installing customized version of Android.
+
+  <p><strong class="first">Minimalistic.</strong>
+  vmConsole design is minimal and provides only necessary UI elements
+  and features in order to provide a stable and consistent software.
+  It is not overloaded by garland of semi-working functions unlike
+  certain similar applications.
+
 </div>
 <script src="files/slider.js"></script>
