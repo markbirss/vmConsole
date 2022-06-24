@@ -1,0 +1,87 @@
+---
+layout: default
+---
+
+<header class="home-header">
+  <h1 class="home-title">{{ page.title | escape }}</h1>
+  <style>
+    .first { font-weight: bold; }
+    .wiki { text-align: center; }
+
+    img { margin: 18px auto; max-width:100%; height:auto; }
+    img.phone:first-of-type { margin-top: 3em; display: block; }
+    @media only screen and (min-width: 500px) {
+      img.phone:first-of-type { margin-top: 0; margin-bottom: 0; margin-left: 1em; margin-right: 1em; float: right; }
+    }
+    .badges { text-align: center; margin-top: 0; margin-left: auto; margin-right: auto; }
+
+    .fade-out { opacity: 0; transition: opacity 1s; }
+    .fade-in { opacity: 1; transition: opacity 1s; }
+  </style>
+</header>
+
+<div class="home">
+  <p>
+    As of now, the vmConsole application is distributed only through Google
+    Play Store. Click on the badge below to proceed to the installation page.
+  </p>
+
+  <div class="badges">
+    <a href="https://play.google.com/store/apps/details?id=sylirre.vmconsole">
+      <img alt="Get it on Google Play" src="files/get-it-on-google-play.png" width="215" height="83"/>
+    </a>
+  </div>
+
+  <p>
+    It is planned to distribute the application through GitHub Releases in
+    future, so people without Google Services will be able to install it as
+    well. Also this will allow us to provide a version of vmConsole without
+    certain restrictions.
+  </p>
+
+  <h2>System Requirements</h2>
+
+  <p>
+    These system requirements are not mandatory. Though on devices where
+    they are met, you will be able to achieve the max from application.
+    Remember that vmConsole is a virtual machine holding the full-blown
+    Linux distribution. Do not be naive, this application IS NOT optimized
+    for low-end devices.
+  </p>
+
+  <ul>
+    <li>
+      <p>
+        Disk: 8 GiB minimum.
+      </p>
+      <p>
+        Assuming you will have one 6 GiB partition on persistent disk
+        and leave some space for Android. Note that vmConsole provides
+        2 persistend disks with max size of 32 GiB. You will be able to
+        use both fully if have more than 64 GiB free on shared storage.
+      </p>
+    </li>
+    <li>
+      <p>
+        RAM: 6 - 8 GB.
+      </p>
+      <p>
+        Having more is good only for overall Android multitasking.
+        vmConsole automatically determines a safe amount of memory that
+        it can allocate, but it has a hard limit of 2047 MiB, which
+        partially is a technical limitation (32bit devices) and partially
+        a safe threshold that will let Android multitasking function
+        properly without OOM conditions.
+      </p>
+    </li>
+  </ul>
+
+  <p>
+    It is suggested to run vmConsole on 64bit devices, as it has been
+    observed that QEMU has better emulation performance on these. But
+    that is unclear, especially in cases where device is 64bit with
+    32bit only support on Android OS. Possibly that on devices having
+    good CPU, the performace between 32bit and 64bit variants will be
+    little to no.
+  </p>
+</div>
