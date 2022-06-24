@@ -31,6 +31,7 @@ minima:
 
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 markdown: CommonMarkGhPages
 commonmark:
