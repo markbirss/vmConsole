@@ -46,6 +46,9 @@ Optimal device properties for running this app:
 
 [<img src="images/google-play-badge.png" width="256px">](https://play.google.com/store/apps/details?id=sylirre.vmconsole)
 
+Visit the [Wiki](https://github.com/sylirre/vmConsole/wiki) for learning
+about application usage.
+
 ## VM properties
 
 |VM property          |Details                                  |
